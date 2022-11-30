@@ -10,9 +10,11 @@ p{
 
 .padding{
     max-width: 400px;
+    margin-top: 200px;
 }
 .paddingrate{
     max-width: 400px;
+    margin-top: 200px;
 }
 
 .padding.disable{
