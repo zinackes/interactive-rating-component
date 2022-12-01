@@ -64,6 +64,8 @@ p{
 
 .stars{
     display: flex;
+    padding: 0;
+    list-style-type: none;
 }
 .round{
     border-radius: 100%;
@@ -80,34 +82,24 @@ p{
     background-color: hsl(213, 19%, 22%);
     width: 40px;
     height: 40px;
-    margin-left: 30px;
+    margin-left: 33px;
     border: none;
     cursor: pointer;
     color: hsl(216, 12%, 54%);
     font-weight: 600;
 }
 
-.round.selected{
-    background-color: hsl(217, 12%, 63%);
+.stars li button:hover{
+    border-radius: 100%;
+    background-color: hsl(25, 97%, 53%);
+    transition: all .3s ease;
     color: white;
 }
-.round2.selected{
+.stars li button:focus{
     background-color: hsl(217, 12%, 63%);
     color: white;
 }
 
-.round:hover{
-    border-radius: 100%;
-    background-color: hsl(25, 97%, 53%);
-    transition: all .3s ease;
-    color: white;
-}
-.round2:hover{
-    border-radius: 100%;
-    background-color: hsl(25, 97%, 53%);
-    transition: all .3s ease;
-    color: white;
-}
 
 .bottom{
     margin-top: 20px;

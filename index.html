@@ -23,23 +23,18 @@
                     </div>
                     <div class="bottom-stars">
                         <div class="stars-colone">
-                            <div class="stars">
-                                <button type="button" class="round" id="star" onclick="onestar()">
-                                    1
-                                </button>
-                                <button class="round2" id="startwo" onclick="twostar()">
-                                    2
-                                </button>
-                                <button class="round2" id="starthree" onclick="threestar()">
-                                    3
-                                </button>
-                                <button class="round2" id="starfour" onclick="fourstar()">
-                                    4
-                                </button>
-                                <button class="round2" id="starfive" onclick="fivestar()">
-                                    5
-                                </button>
-                            </div>
+                                <ul class="stars">
+                                    <li><button type="button" class="round" id="star">1</button>
+                                    </li>
+                                    <li><button type="button" class="round2" id="star">2</button>
+                                    </li>
+                                    <li><button type="button" class="round2" id="star">3</button>
+                                    </li>
+                                    <li><button type="button" class="round2" id="star">4</button>
+                                    </li>
+                                    <li><button type="button" class="round2" id="star">5</button>
+                                    </li>
+                                </ul>
                         </div>
                     </div>
                     <div class="bottom">
@@ -61,8 +56,8 @@
                     </div>
                     <div class="selectedrate">
                         <div class="selectedrate-margin">
-                            <div class="selectedrate-round" id="textnote">
-                                ff
+                            <div class="selectedrate-round">
+                                You selected <span id="textnote"></span> out of 5
                             </div>
                         </div>
                     </div>
@@ -79,91 +74,26 @@
     </body>
 
     <script>
-        var note;
         const text = document.getElementById('textnote');
-        var y = document.getElementById("main");
-        function onestar(){
-            var x = document.getElementById("star");
-                if (x.classname === "round selected") {
-                  x.classname = "round selected";
-                }
-                if (x.className === "round") {
-                  x.className += " selected";
-                }
-            note = 1;
-            y.className = "paddingrate";
-        }
-        function twostar(){
-            var x = document.getElementById("startwo");
-                if (x.classname === "round selected") {
-                  x.classname = "round selected";
-                }
-                if (x.className === "round2") {
-                  x.className += " selected";
-                }
-            note = 2;
-            y.className = "paddingrate";
-        }
-        function threestar(){
-            var x = document.getElementById("starthree");
-                if (x.classname === "round selected") {
-                  x.classname = "round selected";
-                }
-                if (x.className === "round2") {
-                  x.className += " selected";
-                }
-            note = 3;
-            y.className = "paddingrate";
-        }
-        function fourstar(){
-            var x = document.getElementById("starfour");
-                if (x.classname === "round selected") {
-                  x.classname = "round selected";
-                }
-                if (x.className === "round2") {
-                  x.className += " selected";
-                }
-            note = 4;
-            y.className = "paddingrate";
-        }
-        function fivestar(){
-            var x = document.getElementById("starfive");
-                if (x.classname === "round selected") {
-                  x.classname = "round selected";
-                }
-                if (x.className === "round2") {
-                  x.className += " selected";
-                }
-            note = 5;
-            y.className = "paddingrate";
-        }
+        const values = document.querySelectorAll('#star');
+
+        values.forEach((value) => {
+            value.addEventListener("click", () => {
+                text.innerHTML = value.innerHTML;
+            })
+        })
 
         function result(){
             var x = document.getElementById("main");
             var y = document.getElementById("second");
-            if (note>=1) {
-                if (x.className === "paddingrate") {
+            if (text != 0) {
+                if (x.className === "padding") {
                   x.className = "padding disable";
                   y.className = "padding";
                 }
             }
-            console.log(note)
-        if (note == 1){
-            text.textContent = "You selected 1 out of 5";
-        }
-        if (note == 2){
-            text.textContent = "You selected 2 out of 5";
-        }
-        if (note == 3){
-            text.textContent = "You selected 3 out of 5";
-        }
-        if (note == 4){
-            text.textContent = "You selected 4 out of 5";
-        }
-        if (note == 5){
-            text.textContent = "You selected 5 out of 5";
-        }
-        }
+            }
+
 
     </script>
 </html>
